@@ -9,8 +9,8 @@ public struct Text: BuilderComponent {
     
     // MARK: - Properties
     
-    let text: String
-    let attributes: [NSAttributedString.Builder.TextAttribute]
+    public let text: String
+    public let attributes: [NSAttributedString.Builder.TextAttribute]
     
     // MARK: - Initialization
     

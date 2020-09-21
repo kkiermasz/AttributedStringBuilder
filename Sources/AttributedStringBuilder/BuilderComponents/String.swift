@@ -8,8 +8,8 @@ extension String: BuilderComponent {
     
     // MARK: - Getters
     
-    var text: String { self }
-    var attributes: [NSAttributedString.Builder.TextAttribute] { [] }
+    public var text: String { self }
+    public var attributes: [NSAttributedString.Builder.TextAttribute] { [] }
     
     // MARK: - Public
     

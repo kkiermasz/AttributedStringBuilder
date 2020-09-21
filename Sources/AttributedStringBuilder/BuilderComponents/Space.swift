@@ -7,7 +7,14 @@ import Foundation
 /// Adds a space to the final `NSAttributedString`
 public struct Space: BuilderComponent {
 
-    let text = " "
-    let attributes = [NSAttributedString.Builder.TextAttribute]()
+    // MARK: - Properties
+    
+    public let text = " "
+    public let attributes = [NSAttributedString.Builder.TextAttribute]()
 
+    // MARK: - Initialization
+    
+    /// Will create a `Space` component
+    public init() {}
+    
 }
