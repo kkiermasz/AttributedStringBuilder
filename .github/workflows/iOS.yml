@@ -1,0 +1,31 @@
+name: iOS
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: |
+        xcodebuild -scheme AttributedStringBuilder \
+        -destination generic/platform=iOS
+      
+      
+  test:
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Test
+      run: |
+        xcodebuild -scheme AttributedStringBuilder \
+        -destination 'platform=iOS Simulator,name=iPhone 11,OS=latest' \
+        test
