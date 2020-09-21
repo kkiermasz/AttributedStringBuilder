@@ -4,6 +4,7 @@
 
 import Foundation
 
+/// Adds a space to the final `NSAttributedString`
 public struct Space: BuilderComponent {
 
     let text = " "

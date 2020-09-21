@@ -4,6 +4,7 @@
 
 import Foundation
 
+/// Adds a given string to the final `NSAttributedString`
 public struct Text: BuilderComponent {
     
     // MARK: - Properties
@@ -13,11 +14,13 @@ public struct Text: BuilderComponent {
     
     // MARK: - Initialization
     
+    /// Will create a `Text` component without attributes
     public init(_ text: String) {
         self.text = text
         self.attributes = []
     }
     
+    /// Will create a `Text` component with given attributes
     public init(_ text: String, with attributes: NSAttributedString.Builder.TextAttribute...) {
         self.text = text
         self.attributes = attributes

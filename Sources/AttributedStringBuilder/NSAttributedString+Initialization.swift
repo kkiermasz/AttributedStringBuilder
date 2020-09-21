@@ -6,7 +6,7 @@ import Foundation
 
 extension NSAttributedString {
 
-    convenience init(@AttributedStringBuilder builder: () -> NSAttributedString) {
+    public convenience init(@AttributedStringBuilder builder: () -> NSAttributedString) {
         self.init(attributedString: builder())
     }
 

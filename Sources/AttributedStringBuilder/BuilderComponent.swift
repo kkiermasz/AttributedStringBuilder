@@ -4,6 +4,7 @@
 
 import Foundation
 
+/// The interface that the components to be added to the string must fulfill in closure initialization
 protocol BuilderComponent {
 
     var text: String { get }
