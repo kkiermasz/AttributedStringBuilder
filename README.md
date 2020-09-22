@@ -1,6 +1,6 @@
 # AttributedStringBuilder
 
-AttributedStringBuilder is a simple builder that makes composing NSAttributedStringBuilder pleasant.
+AttributedStringBuilder is a simple builder that makes composing NSAttributedString pleasant.
 
 ## Features
 
