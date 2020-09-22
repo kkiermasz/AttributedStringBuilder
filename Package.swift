@@ -5,6 +5,11 @@ import PackageDescription
 
 let package = Package(
     name: "AttributedStringBuilder",
+    platforms: [
+        .iOS(.v11),
+        .macOS(.v10_11),
+        .tvOS(.v11),
+    ],
     products: [
         .library(
             name: "AttributedStringBuilder",
