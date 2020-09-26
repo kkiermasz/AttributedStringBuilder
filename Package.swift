@@ -15,7 +15,7 @@ let package = Package(
             name: "AttributedStringBuilder",
             targets: ["AttributedStringBuilder"]),
     ],
-    dependencies: [.package(url: "https://github.com/Quick/Nimble", from: "8.1.1")],
+    dependencies: [.package(url: "https://github.com/Quick/Nimble", from: "9.0.0-rc.3")],
     targets: [
         .target(name: "AttributedStringBuilder"),
         .testTarget(
