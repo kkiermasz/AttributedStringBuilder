@@ -2,6 +2,8 @@
 
 AttributedStringBuilder is a simple builder that makes composing NSAttributedString pleasant.
 
+![Tests](https://github.com/kkiermasz/AttributedStringBuilder/workflows/Tests/badge.svg)
+
 ## Features
 
 It provides two ways of composing attributed strings. 
