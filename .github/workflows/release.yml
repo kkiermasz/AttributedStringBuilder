@@ -1,0 +1,58 @@
+name: Release
+
+jobs:
+    tests:
+        runs-on: macos-latest
+        name: Test ${{ matrix.platform }}
+        strategy:
+          fail-fast: true
+          matrix:
+            platform: [macOS, iOS, tvOS]
+            include:
+                - platform: macOS
+                  destination: platform=OS X,arch=x86_64
+                - platform: iOS
+                  destination: platform=iOS Simulator,name=iPhone 11,OS=latest
+                - platform: tvOS
+                  destination: platform=tvOS Simulator,name=Apple TV 4K,OS=latest
+        steps:
+          - name: Setup xcode version
+            uses: maxim-lobanov/setup-xcode@v1.1
+            with:
+                xcode-version: latest-stable
+          - name: Checkout
+            uses: actions/checkout@v2
+          - name: Run ${{ matrix.platform}} tests
+            run: |
+                xcodebuild -scheme AttributedStringBuilder \
+                -destination '${{ matrix.destination }}' \
+                test
+
+    release:
+        name: Release
+        needs: tests
+        if: startsWith(github.ref, 'refs/tags/v')
+        runs-on: macos-latest
+        steps:
+          - name: Setup xcode version
+            uses: maxim-lobanov/setup-xcode@v1.1
+            with:
+                xcode-version: latest-stable
+          - name: Checkout
+            uses: actions/checkout@v2
+          - name: Create XCFramework
+            uses: unsignedapps/swift-create-xcframework@v1.2.1
+            with:
+                platforms: ios, macos, tvos
+            
+            
+          - name: Upload xcframework
+            uses: actions/upload-artifact@v2
+            with:
+              name: docs
+              path: docs/*.pdf
+          - name: Upload checksum
+            uses: actions/upload-artifact@v2
+            with:
+              name: docs
+              path: docs/*.pdf
