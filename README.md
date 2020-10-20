@@ -1,12 +1,12 @@
 # AttributedStringBuilder
 
-AttributedStringBuilder is a simple builder that makes composing NSAttributedString pleasant.
+AttributedStringBuilder is a simple builder that makes composing NSAttributedString pleasant by expressing each component within a closure.
 
 ![Tests](https://github.com/kkiermasz/AttributedStringBuilder/workflows/Tests/badge.svg)
 
 ## Features
 
-It provides two ways of composing attributed strings. 
+It provides two ways of composing attributed strings. The first one is achieved by using new Swift 5.3 function builder feature.
 
 ### Composing in closure
 
