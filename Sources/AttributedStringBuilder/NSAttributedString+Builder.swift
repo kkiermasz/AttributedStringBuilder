@@ -43,6 +43,18 @@ extension NSAttributedString {
         ///
         /// - Parameters:
         ///   - text:       Text to append to string under construction.
+        ///
+        /// - Returns: The `Builder` instance on which this function was called
+        @discardableResult
+        public func add(_ text: String) -> Self {
+            add(text, with: [])
+            return self
+        }
+        
+        /// Appends given text to the string that is under construction
+        ///
+        /// - Parameters:
+        ///   - text:       Text to append to string under construction.
         ///   - attributes: Attributes that will be set to the text
         ///
         /// - Returns: The `Builder` instance on which this function was called
