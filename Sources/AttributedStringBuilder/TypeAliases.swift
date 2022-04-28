@@ -8,10 +8,14 @@ import UIKit
 typealias Color = UIColor
 typealias Font = UIFont
 
-#else
+#elseif canImport(AppKit)
 
 import AppKit
 typealias Color = NSColor
 typealias Font = NSFont
+
+#else
+
+#error("wtf")
 
 #endif
